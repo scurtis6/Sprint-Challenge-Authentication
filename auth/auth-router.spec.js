@@ -4,8 +4,8 @@ const server = require('../api/server');
 
 describe('POST /api/auth/register', function () {
     const newUser = {
-        "username": "usertest",
-        "password": "usertest"
+        "username": "authtest",
+        "password": "authtest"
     }
     it('should return 201 CREATED', function () {
         return request(server).post('/api/auth/register').send(newUser).then(res => {
@@ -30,19 +30,14 @@ describe('POST /api/auth/register', function () {
         it('should return Welcome ${username}!', function () {
             return request(server).post('/api/auth/login').send(user).then(res => {
                 expect(res.body.message).toMatch('Welcome user!')
-            })
-        })
+            });
+        });
+        describe('GET /auth/users', function() {
+            it('should return 200 OK', function() {
+                return request(server).get('/api/auth/users').then(res => {
+                    expect(res.status).toBe(200);
+                });
+            });
+        });
     });
 });
-
-// describe('users router', function() {
-//     it('should run the tests', function () {
-//         expect(true).toBe(true);
-//     });
-
-//     describe('GET /', function() {
-//         it('should return 200 OK', function() {
-//             return request(server).get('/api/users').then(res => {
-//                 expect(res.status).toBe(200);
-//             });
-//         });
