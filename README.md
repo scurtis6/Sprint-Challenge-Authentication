@@ -38,13 +38,23 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is the purpose of using _sessions_?
+- [x] What is the purpose of using _sessions_?
 
-- [ ] What does bcrypt do to help us store passwords in a secure manner.
+sessions are a way for the user logged in to stay logged when viewing a site with restrictions.
 
-- [ ] What does bcrypt do to slow down attackers?
+- [x] What does bcrypt do to help us store passwords in a secure manner.
 
-- [ ] What are the three parts of the JSON Web Token?
+bcrypt is a tool that allows passwords to be hidden with a code of letters, numbers and special characters.
+
+- [x] What does bcrypt do to slow down attackers?
+
+bcrypt hashes a password to make it harder to attackers to steal this information.
+
+- [x] What are the three parts of the JSON Web Token?
+
+1. payload: where the information is stored
+2. options: any modifications
+3. secret: decodes the token
 
 ## Minimum Viable Product
 
@@ -52,7 +62,7 @@ Implement an User Authentication System. Hash user's passwords before saving the
 
 - [x] Implement the `register` and `login` functionality inside `/auth/auth-router.js`. A `user` has `username` and `password`. Both properties are required.
 - [x] Implement the `authenticate` middleware inside `/auth/authenticate-middleware.js`.
-- [ ] Write a **minimum o 2 tests** per API endpoint. Write more tests if you have time.
+- [x] Write a **minimum o 2 tests** per API endpoint. Write more tests if you have time.
 
 **Note**: the database already has the users table, but if you run into issues, the migrations are available.
 
